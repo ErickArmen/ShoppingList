@@ -8,4 +8,5 @@
     <string name="new_name_list">Create new list?</string>
     <string name="delete_this_list">Delete this list?</string>
     <string name="name_new_product">Name of the new product: </string>
+    <string name="empty_name">Write a name</string>
 </resources>

@@ -133,20 +133,25 @@ class ActivityNewList: AppCompatActivity(), InterfaceProducts, InterfaceTouchHel
 
             dialog as Dialog
             val uid = adapterProds.getItem(adapterProds.itemCount - 1).uid
-            val item = EntityProducts(uid+1, dialog.etDialog.text.toString())
-            disposable.add(
-                    viewModel.addProduct(listOf(item)).subscribe(
+            val productName = dialog.etDialog.text.toString()
+            if (productName.isNotBlank()){
+            val item = EntityProducts(uid+1, productName)
+                disposable.add(
+                        viewModel.addProduct(listOf(item)).subscribe(
 
-                            {
-                                adapterProds.addItem(item)
-                                adapterProds.notifyItemInserted(adapterProds.itemCount)
-                                Toast.makeText(this, R.string.product_added, Toast.LENGTH_LONG).show()
-                            },
-                            {
-                                Toast.makeText(this, R.string.list_error, Toast.LENGTH_LONG).show()
-                            }
-                    )
-            )
+                                {
+                                    adapterProds.addItem(item)
+                                    adapterProds.notifyItemInserted(adapterProds.itemCount)
+                                    Toast.makeText(this, R.string.product_added, Toast.LENGTH_LONG).show()
+                                },
+                                {
+                                    Toast.makeText(this, R.string.list_error, Toast.LENGTH_LONG).show()
+                                }
+                        )
+                )
+            }else{
+                Toast.makeText(this, R.string.empty_name, Toast.LENGTH_SHORT).show()
+            }
         }
 
         val dlgAlert = AlertDialog.Builder(this, R.style.CustomizedDialog)

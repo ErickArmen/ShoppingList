@@ -64,13 +64,17 @@ class MainActivity : AppCompatActivity(), InterfaceProducts, InterfaceTouchHelpe
             showDialog(R.string.new_name_list,
                     R.layout.dialog_with_edittext,
                     {s->
-                        disposable.add(
-                                viewModel.searchListName(s).subscribe(
-                                        {Toast.makeText(this, R.string.name_exists, Toast.LENGTH_SHORT).show()},//success
-                                        {Toast.makeText(this, R.string.list_error, Toast.LENGTH_SHORT).show()},//error
-                                        {goCreateNewList(s)}                                                      //complete
-                                )
-                        )
+                        if (s.isNotBlank()) {
+                            disposable.add(
+                                    viewModel.searchListName(s).subscribe(
+                                            { Toast.makeText(this, R.string.name_exists, Toast.LENGTH_SHORT).show() },//success
+                                            { Toast.makeText(this, R.string.list_error, Toast.LENGTH_SHORT).show() },//error
+                                            { goCreateNewList(s) }                                                      //complete
+                                    )
+                            )
+                        }else{
+                            Toast.makeText(this, R.string.empty_name, Toast.LENGTH_SHORT).show()
+                        }
                     },
                     {},{}
             )
