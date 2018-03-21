@@ -3,6 +3,8 @@ Crate a list of products from another preloaded list to simply click on the prod
 products, this feature allows you to create list not only from products but of whatever you want. When you are checking what products 
 are already buyed you can cross them.
 
+This app was built under the principles of TDD using the espresso and robolectric tools.
+
 Note: Because of the low fps of the gif seems like I only click once in Milk and 3 products were added, but in fact the 3 products were 
 clicked.
 <p
