@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/shine_with_me</item>
+    </style>
+
+    <style name="AnandaStyle">
+        <item name="android:fontFamily">@font/ananda</item>
+    </style>
+
+    <style name="ShineWithMeStyle">
+        <item name="android:fontFamily">@font/shine_with_me</item>
+    </style>
+
+    <style name="CustomizedDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowTitleStyle">@style/ShineWithMeStyle</item>
+    </style>
+
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ShoppingList</string>
+    <string name="list_done">List successful saved!</string>
+    <string name="list_error">Something went wrong with your list try again )=</string>
+    <string name="product_added">Product added correctly!</string>
+    <string name="deleted">Deleted successfully!</string>
+    <string name="name_exists">This name already exists</string>
+    <string name="new_name_list">Create new list?</string>
+    <string name="delete_this_list">Delete this list?</string>
+    <string name="name_new_product">Name of the new product: </string>
+</resources>
